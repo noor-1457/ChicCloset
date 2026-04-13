@@ -19,7 +19,7 @@ function Navbar() {
   return (
     <>
       {/* Top Banner */}
-      <div className="bg-red-500 text-white text-center py-2 text-sm">
+      <div className="bg-red-400 text-white text-center py-2 text-sm">
         Summer Sale - Up to 50% Off!
       </div>
 
@@ -127,8 +127,8 @@ function Navbar() {
 
             {/* Icons */}
             <div className="flex justify-center gap-6 mt-4">
-              <Heart className="text-gray-300 hover:text-white cursor-pointer transition" />
-              <ShoppingCart className="text-gray-300 hover:text-white cursor-pointer transition" />
+              <Heart className="text-gray-300 hover:text-red-400 cursor-pointer transition" />
+              <ShoppingCart className="text-gray-300 hover:text-red-400 cursor-pointer transition" />
             </div>
           </div>
 
@@ -141,7 +141,7 @@ function Navbar() {
                 onClick={() => setIsOpen(false)}
                 className="flex items-center justify-center py-3 rounded-xl font-medium
                 text-gray-300
-                hover:bg-gray-800 hover:text-white
+                hover:bg-red-400 hover:text-white
                 transition-all duration-300
                 shadow-sm hover:shadow-md"
               >

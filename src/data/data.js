@@ -1,7 +1,7 @@
-import p1_image from "./men-casual-tshirt.jpg";
-import p2_image from "./denim-jeans.jpg";
-import p3_image from "./summer-dress.webp";
-import p4_image from "./formal-shirts-1000x1000.jpg";
+import p1_image from "../assets/men-casual-tshirt.jpg";
+import p2_image from "../assets/denim-jeans.jpg";
+import p3_image from "../assets/summer-dress.webp";
+import p4_image from "../assets/formal-shirts-1000x1000.jpg";
 
 const data_product = [
   {
