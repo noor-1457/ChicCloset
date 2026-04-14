@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Heart } from "lucide-react";
+import { Heart, ShoppingCart } from "lucide-react";
+import { ShopContext } from "../context/ShopContext"; // ✅ correct import
 
 function Card(props) {
+  const { addToCart } = useContext(ShopContext); // ✅ works now
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -12,7 +15,7 @@ function Card(props) {
       viewport={{ once: true }}
       className="w-[260px] bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
     >
-      {/* Image Section */}
+      {/* Image */}
       <div className="relative bg-gray-100 p-4 flex items-center justify-center">
         <Link to={`/product/${props.id}`}>
           <img
@@ -25,6 +28,14 @@ function Card(props) {
         {/* Heart */}
         <button className="absolute top-3 right-3 bg-white/90 p-2 rounded-full shadow hover:bg-red-400 hover:scale-110 transition-all duration-300">
           <Heart className="w-5 h-5 text-gray-600 hover:text-white" />
+        </button>
+
+        {/* Add to Cart */}
+        <button
+          onClick={() => addToCart(props.id)} // ✅ fixed
+          className="absolute top-14 right-3 bg-white/90 p-2 rounded-full shadow hover:bg-red-400 hover:scale-110 transition-all duration-300"
+        >
+          <ShoppingCart className="w-5 h-5 text-gray-600 hover:text-white" />
         </button>
       </div>
 
@@ -45,6 +56,10 @@ function Card(props) {
           </span>
         </div>
       </div>
+
+      <button className="bg-red-400 text-white py-2 px-4 my-6 mx-auto block rounded hover:bg-red-500 hover:scale-110 transition-all duration-300">
+        Buy Now
+      </button>
     </motion.div>
   );
 }

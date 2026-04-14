@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, Heart, ShoppingCart, Search } from "lucide-react";
+import { ShopContext } from "../context/ShopContext";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { getTotalcartItems } = useContext(ShopContext);
 
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Contact", path: "/contact" },
-    { name: "About", path: "/about" },
     { name: "Sign Up", path: "/sign-up" },
   ];
 
@@ -67,14 +68,17 @@ function Navbar() {
             </div>
 
             {/* Icons */}
-            <Heart className="text-gray-300 hover:text-white cursor-pointer transition" />
+            <Link to="/wishlist">
+              <Heart className="text-gray-300 hover:text-white cursor-pointer transition" />
+            </Link>
 
             <div className="relative cursor-pointer">
-              <ShoppingCart className="text-gray-300 hover:text-white transition" />
-
+              <Link to="/cart">
+                <ShoppingCart className="text-gray-300 hover:text-white transition" />
+              </Link>
               {/* Cart Badge */}
               <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1.5 rounded-full">
-                2
+                {getTotalcartItems()}
               </span>
             </div>
           </div>
