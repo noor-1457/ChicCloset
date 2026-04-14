@@ -24,7 +24,7 @@ function Categories() {
             {icons.map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center gap-3 bg-white p-4 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-2 transition-all duration-300 cursor-pointer w-[120px]"
+                className="flex flex-col items-center gap-3 bg-white p-4 rounded-xl shadow-sm hover:bg-red-400 hover:shadow-md hover:-translate-y-2 transition-all duration-300 cursor-pointer w-[120px]"
               >
                 <div className="p-3 bg-gray-100 rounded-full group-hover:bg-red-100 transition">
                   <item.icon className="w-6 h-6 text-gray-600 group-hover:text-red-500" />
