@@ -5,7 +5,7 @@ import { ShopContext } from "../context/ShopContext";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const { getTotalcartItems } = useContext(ShopContext);
+  const { getTotalcartItems, getTotalWishlistItems } = useContext(ShopContext);
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -68,9 +68,21 @@ function Navbar() {
             </div>
 
             {/* Icons */}
-            <Link to="/wishlist">
-              <Heart className="text-gray-300 hover:text-white cursor-pointer transition" />
-            </Link>
+            {/* <Link to="/wishlist">
+              <button onClick={getTotalcartItems()}>
+                <Heart className="text-gray-300 hover:text-white cursor-pointer transition" />
+              </button>
+            </Link> */}
+
+            <div className="relative cursor-pointer">
+              <Link to="/wishlist">
+                <Heart className="text-gray-300 hover:text-white transition" />
+              </Link>
+              {/* Cart Badge */}
+              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1.5 rounded-full">
+                {getTotalWishlistItems()}
+              </span>
+            </div>
 
             <div className="relative cursor-pointer">
               <Link to="/cart">

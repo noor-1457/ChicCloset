@@ -1,38 +1,38 @@
-import p1_image from "../assets/leather-jacket.jpeg";
-import p2_image from "../assets/maxi-dress.webp";
-import p3_image from "../assets/polo-shirt.webp";
-import p4_image from "../assets/office-pants.webp";
+import p37_image from "../assets/leather-jacket.jpeg";
+import p38_image from "../assets/maxi-dress.webp";
+import p39_image from "../assets/polo-shirt.webp";
+import p40_image from "../assets/office-pants.webp";
 
 const new_collection = [
   {
-    id: 1,
+    id: 37,
     name: "Leather Jacket",
     category: "Men",
-    image: p1_image,
+    image: p37_image,
     new_price: 7500,
     old_price: 9000,
   },
   {
-    id: 2,
+    id: 38,
     name: "Maxi Dress",
     category: "Women",
-    image: p2_image,
+    image: p38_image,
     new_price: 4800,
     old_price: 5500,
   },
   {
-    id: 3,
+    id: 39,
     name: "Polo Shirt",
     category: "Men",
-    image: p3_image,
+    image: p39_image,
     new_price: 2000,
     old_price: 2500,
   },
   {
-    id: 4,
+    id: 40,
     name: "Office Pants",
     category: "Men",
-    image: p4_image,
+    image: p40_image,
     new_price: 3200,
     old_price: 3700,
   },

@@ -7,6 +7,9 @@ import Home from "./pages/Home.jsx";
 import Signup from "./pages/Signup.jsx";
 import Wishlist from "./pages/Wishlist.jsx";
 import { CartItems } from "./pages/CartItems.jsx";
+import ProductCard from "./components/ProductCard.jsx";
+import Buy from "./pages/Buy.jsx";
+import Category from "./pages/Category.jsx";
 
 function App() {
   return (
@@ -18,6 +21,9 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/cart" element={<CartItems />} />
+          <Route path="/product/:id" element={<ProductCard />} />
+          <Route path="/buy/:id" element={<Buy />} />
+          <Route path="/category/:name" element={<Category />} />
         </Route>
       </Routes>
     </div>

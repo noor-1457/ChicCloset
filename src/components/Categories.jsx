@@ -1,15 +1,19 @@
 import React from "react";
 import { Shirt, Gem, Headphones, Watch, Camera, Dices } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 function Categories() {
   const icons = [
-    { name: "Mens Wear", icon: Shirt },
-    { name: "Women's", icon: Gem },
-    { name: "Headphones", icon: Headphones },
-    { name: "Watch", icon: Watch },
-    { name: "Camera", icon: Camera },
-    { name: "Gaming", icon: Dices },
+    { name: "Mens Wear", icon: Shirt, route: "men" },
+    { name: "Women's", icon: Gem, route: "women" },
+    { name: "Headphones", icon: Headphones, route: "headphones" },
+    { name: "Watch", icon: Watch, route: "watch" },
+    { name: "Camera", icon: Camera, route: "camera" },
+    { name: "Gaming", icon: Dices, route: "gaming" },
   ];
+
+  const navigate = useNavigate();
+
   return (
     <>
       <div className=" container mx-auto px-4 py-8 items-center justify-center">
@@ -22,18 +26,19 @@ function Categories() {
         <div className="mt-8">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 place-items-center">
             {icons.map((item, index) => (
-              <div
+              <button
                 key={index}
-                className="flex flex-col items-center gap-3 bg-white p-4 rounded-xl shadow-sm hover:bg-red-400 hover:shadow-md hover:-translate-y-2 transition-all duration-300 cursor-pointer w-[120px]"
+                onClick={() => navigate(`/category/${item.route}`)}
+                className="flex flex-col items-center gap-3 bg-white p-4 rounded-xl shadow-sm hover:bg-red-400 hover:-translate-y-2 transition-all duration-300 w-[120px]"
               >
-                <div className="p-3 bg-gray-100 rounded-full group-hover:bg-red-100 transition">
-                  <item.icon className="w-6 h-6 text-gray-600 group-hover:text-red-500" />
+                <div className="p-3 bg-gray-100 rounded-full">
+                  <item.icon className="w-6 h-6 text-gray-600" />
                 </div>
 
                 <div className="text-sm font-medium text-gray-700 text-center">
                   {item.name}
                 </div>
-              </div>
+              </button>
             ))}
           </div>
         </div>

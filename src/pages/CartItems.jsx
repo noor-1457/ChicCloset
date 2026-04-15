@@ -3,7 +3,7 @@ import remove_icon from "../Assets/delete.png";
 import { ShopContext } from "../context/ShopContext";
 
 export const CartItems = () => {
-  const { getTotalAmt, all_product, cartItems, remFromCart } =
+  const { getTotalAmt, allProducts, cartItems, remFromCart } =
     useContext(ShopContext);
 
   return (
@@ -19,7 +19,7 @@ export const CartItems = () => {
       </div>
 
       {/* Items */}
-      {all_product.map((e) => {
+      {allProducts.map((e) => {
         if (cartItems[e.id] > 0) {
           return (
             <div

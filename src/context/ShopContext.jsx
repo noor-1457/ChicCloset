@@ -1,78 +1,121 @@
 import React, { createContext, useState } from "react";
 import all_product from "../data/all_product";
+import new_collection from "../data/Newcoll-data";
+import BestSellings from "../data/BestSellings";
+import extra_products from "../data/ExtraProducts";
 
 export const ShopContext = createContext(null);
+const allProducts = [
+  ...all_product,
+  ...new_collection,
+  ...BestSellings,
+  ...extra_products,
+]; // ✅ merge
 
 // default cart
 const getDefaultCart = () => {
   let cart = {};
-  for (let index = 0; index < all_product.length + 1; index++) {
-    cart[index] = 0;
-  }
+  allProducts.forEach((item) => {
+    cart[item.id] = 0; // ✅ ID based
+  });
   return cart;
 };
 
-// ✅ COMPONENT BANAYA
+const getDefaultWishlist = () => {
+  let wishlist = {};
+  allProducts.forEach((item) => {
+    wishlist[item.id] = 0; // ✅ ID based
+  });
+  return wishlist;
+};
+
 const ShopContextProvider = (props) => {
-  // ✅ Hook inside component
+  // 🛒 Cart state
   const [cartItems, setCartItems] = useState(getDefaultCart());
 
-  // add to cart
+  // ❤️ Wishlist state (SEPARATE)
+  const [wishlistItems, setWishlistItems] = useState(getDefaultWishlist());
+
+  // ---------------- CART ----------------
+
   const addToCart = (itemId) => {
     setCartItems((prev) => ({
       ...prev,
       [itemId]: prev[itemId] + 1,
     }));
   };
-
-  // remove
   const remFromCart = (itemId) => {
     setCartItems((prev) => ({
       ...prev,
-      [itemId]: prev[itemId] - 1,
+      [itemId]: Math.max(prev[itemId] - 1, 0), // ✅ no negative
     }));
   };
 
-  // total amount
   const getTotalAmt = () => {
-    let totalAmt = 0;
+    let total = 0;
 
     for (const item in cartItems) {
       if (cartItems[item] > 0) {
-        const itemInfo = all_product.find(
-          (product) => product.id === Number(item),
-        );
+        const itemInfo = allProducts.find((p) => p.id === Number(item));
 
         if (itemInfo) {
-          totalAmt += itemInfo.new_price * cartItems[item];
+          total += itemInfo.new_price * cartItems[item];
         }
       }
     }
 
-    return totalAmt;
+    return total;
   };
 
-  // total items
   const getTotalcartItems = () => {
-    let totalItems = 0;
-
+    let total = 0;
     for (const item in cartItems) {
-      if (cartItems[item] > 0) {
-        totalItems += cartItems[item];
-      }
+      total += cartItems[item];
     }
-
-    return totalItems;
+    return total;
   };
+
+  // ---------------- WISHLIST ----------------
+
+  const addToWishlist = (itemId) => {
+    setWishlistItems((prev) => ({
+      ...prev,
+      [itemId]: 1, // wishlist me sirf 1 item hota hai
+    }));
+  };
+
+  const removeFromWishlist = (itemId) => {
+    setWishlistItems((prev) => ({
+      ...prev,
+      [itemId]: 0,
+    }));
+  };
+
+  const getTotalWishlistItems = () => {
+    let total = 0;
+    for (const item in wishlistItems) {
+      total += wishlistItems[item];
+    }
+    return total;
+  };
+
+  // ---------------- CONTEXT ----------------
 
   const ContextValue = {
-    getTotalcartItems,
-    getTotalAmt,
-    all_product,
+    allProducts,
+
+    // cart
     cartItems,
-    setCartItems,
     addToCart,
     remFromCart,
+    getTotalAmt,
+    getTotalcartItems,
+
+    // wishlist
+    wishlistItems,
+    addToWishlist,
+    removeFromWishlist,
+    getTotalWishlistItems,
   };
 
   return (

@@ -31,16 +31,13 @@ import p29_img from "../assets/track-pants.jpeg";
 import p30_img from "../assets/heels.jpeg";
 import p31_img from "../assets/saree.jpeg";
 import p32_img from "../assets/casual shorts.jpeg";
-import p33_img from "../assets/Girls Party Frock.jpeg";
-import p34_img from "../assets/bagpack.jpeg";
-import p35_img from "../assets/sweatpants.jpeg";
-import p36_img from "../assets/Boys Orange Colourblocked Hooded Sweatshirt.jpeg";
 
 const all_product = [
   {
     id: 1,
     name: "Men's Casual T-Shirt",
-    category: "Men",
+    category: "men",
+    description: "Soft cotton casual t-shirt for everyday comfortable wear.",
     image: p1_img,
     new_price: 1200,
     old_price: 1500,
@@ -48,7 +45,8 @@ const all_product = [
   {
     id: 2,
     name: "Denim Jeans",
-    category: "Men",
+    category: "men",
+    description: "Classic slim-fit denim jeans with durable stretch fabric.",
     image: p2_img,
     new_price: 2500,
     old_price: 3000,
@@ -56,7 +54,8 @@ const all_product = [
   {
     id: 3,
     name: "Summer Dress",
-    category: "Women",
+    category: "women",
+    description: "Lightweight and stylish summer dress for daily wear.",
     image: p3_img,
     new_price: 3500,
     old_price: 4000,
@@ -64,7 +63,8 @@ const all_product = [
   {
     id: 4,
     name: "Formal Shirt",
-    category: "Men",
+    category: "men",
+    description: "Elegant formal shirt suitable for office and meetings.",
     image: p4_img,
     new_price: 2200,
     old_price: 2700,
@@ -72,7 +72,8 @@ const all_product = [
   {
     id: 5,
     name: "Hoodie",
-    category: "Women",
+    category: "women",
+    description: "Warm and cozy hoodie perfect for winter season.",
     image: p5_img,
     new_price: 2800,
     old_price: 3300,
@@ -80,7 +81,8 @@ const all_product = [
   {
     id: 6,
     name: "Embroidered Kurta",
-    category: "Men",
+    category: "men",
+    description: "Traditional embroidered kurta with premium fabric finish.",
     image: p6_img,
     new_price: 3200,
     old_price: 3800,
@@ -88,7 +90,8 @@ const all_product = [
   {
     id: 7,
     name: "Kids Frock",
-    category: "Kids",
+    category: "kids",
+    description: "Cute and comfortable frock for kids daily use.",
     image: p7_img,
     new_price: 1800,
     old_price: 2200,
@@ -96,7 +99,8 @@ const all_product = [
   {
     id: 8,
     name: "Sneakers",
-    category: "Women",
+    category: "shoes",
+    description: "Trendy sneakers designed for comfort and daily wear.",
     image: p8_img,
     new_price: 4000,
     old_price: 4700,
@@ -104,7 +108,8 @@ const all_product = [
   {
     id: 9,
     name: "Leather Jacket",
-    category: "Men",
+    category: "men",
+    description: "Premium leather jacket for a bold and stylish look.",
     image: p9_img,
     new_price: 7500,
     old_price: 9000,
@@ -112,7 +117,8 @@ const all_product = [
   {
     id: 10,
     name: "Maxi Dress",
-    category: "Women",
+    category: "women",
+    description: "Elegant maxi dress perfect for parties and events.",
     image: p10_img,
     new_price: 4800,
     old_price: 5500,
@@ -120,7 +126,8 @@ const all_product = [
   {
     id: 11,
     name: "Polo Shirt",
-    category: "Men",
+    category: "men",
+    description: "Smart polo shirt suitable for casual and semi-formal wear.",
     image: p11_img,
     new_price: 2000,
     old_price: 2500,
@@ -128,7 +135,8 @@ const all_product = [
   {
     id: 12,
     name: "Office Pants",
-    category: "Men",
+    category: "men",
+    description: "Comfortable office trousers with perfect formal fit.",
     image: p12_img,
     new_price: 3200,
     old_price: 3700,
@@ -136,7 +144,8 @@ const all_product = [
   {
     id: 13,
     name: "Abaya",
-    category: "Women",
+    category: "women",
+    description: "Elegant abaya designed for modest fashion style.",
     image: p13_img,
     new_price: 5500,
     old_price: 6200,
@@ -144,7 +153,8 @@ const all_product = [
   {
     id: 14,
     name: "Kids T-Shirt",
-    category: "Kids",
+    category: "kids",
+    description: "Soft cotton t-shirt for kids daily comfort.",
     image: p14_img,
     new_price: 1200,
     old_price: 1600,
@@ -152,7 +162,8 @@ const all_product = [
   {
     id: 15,
     name: "Sports Shoes",
-    category: "Women",
+    category: "shoes",
+    description: "High-performance sports shoes for running and training.",
     image: p15_img,
     new_price: 4200,
     old_price: 4800,
@@ -160,7 +171,8 @@ const all_product = [
   {
     id: 16,
     name: "Handbag",
-    category: "Women",
+    category: "accessories",
+    description: "Stylish handbag perfect for daily use and outings.",
     image: p16_img,
     new_price: 3500,
     old_price: 4000,
@@ -168,7 +180,8 @@ const all_product = [
   {
     id: 17,
     name: "Track Pants",
-    category: "Men",
+    category: "men",
+    description: "Comfortable track pants ideal for gym and sports.",
     image: p17_img,
     new_price: 2100,
     old_price: 2500,
@@ -176,7 +189,8 @@ const all_product = [
   {
     id: 18,
     name: "Evening Gown",
-    category: "Women",
+    category: "women",
+    description: "Luxury evening gown for special occasions and events.",
     image: p18_img,
     new_price: 8000,
     old_price: 9500,
@@ -184,7 +198,8 @@ const all_product = [
   {
     id: 19,
     name: "Boys Hooded Sweatshirt",
-    category: "Kids",
+    category: "kids",
+    description: "Warm hoodie sweatshirt for kids winter comfort.",
     image: p19_img,
     new_price: 2500,
     old_price: 3000,
@@ -192,7 +207,8 @@ const all_product = [
   {
     id: 20,
     name: "Sandals",
-    category: "Women",
+    category: "shoes",
+    description: "Comfortable sandals for daily casual wear.",
     image: p20_img,
     new_price: 1800,
     old_price: 2200,
@@ -200,7 +216,8 @@ const all_product = [
   {
     id: 21,
     name: "Kurti",
-    category: "Women",
+    category: "women",
+    description: "Stylish kurti with traditional elegant design.",
     image: p21_img,
     new_price: 2800,
     old_price: 3200,
@@ -208,7 +225,8 @@ const all_product = [
   {
     id: 22,
     name: "Cap",
-    category: "Women",
+    category: "accessories",
+    description: "Trendy cap for casual streetwear style.",
     image: p22_img,
     new_price: 800,
     old_price: 1200,
@@ -216,7 +234,8 @@ const all_product = [
   {
     id: 23,
     name: "Jeans Jacket",
-    category: "Men",
+    category: "men",
+    description: "Classic denim jacket for a stylish casual look.",
     image: p23_img,
     new_price: 5000,
     old_price: 6000,
@@ -224,7 +243,8 @@ const all_product = [
   {
     id: 24,
     name: "Party Dress",
-    category: "Women",
+    category: "women",
+    description: "Beautiful party dress designed for special occasions.",
     image: p24_img,
     new_price: 6200,
     old_price: 7000,
@@ -232,7 +252,8 @@ const all_product = [
   {
     id: 25,
     name: "Chinos",
-    category: "Men",
+    category: "men",
+    description: "Comfortable chinos trousers for smart casual look.",
     image: p25_img,
     new_price: 2300,
     old_price: 2700,
@@ -240,7 +261,8 @@ const all_product = [
   {
     id: 26,
     name: "Floral Skirt",
-    category: "Women",
+    category: "women",
+    description: "Stylish floral skirt for trendy fashion outfits.",
     image: p26_img,
     new_price: 3000,
     old_price: 3500,
@@ -248,7 +270,8 @@ const all_product = [
   {
     id: 27,
     name: "Kids Shorts",
-    category: "Kids",
+    category: "kids",
+    description: "Comfortable shorts for kids daily summer wear.",
     image: p27_img,
     new_price: 1000,
     old_price: 1300,
@@ -256,7 +279,8 @@ const all_product = [
   {
     id: 28,
     name: "Wrist Watch",
-    category: "Women",
+    category: "watch",
+    description: "Elegant wrist watch with premium design and finish.",
     image: p28_img,
     new_price: 5500,
     old_price: 6500,
@@ -264,7 +288,8 @@ const all_product = [
   {
     id: 29,
     name: "Sports Tracksuit",
-    category: "Men",
+    category: "men",
+    description: "Comfortable tracksuit for sports and gym activities.",
     image: p29_img,
     new_price: 4500,
     old_price: 5200,
@@ -272,7 +297,8 @@ const all_product = [
   {
     id: 30,
     name: "Ladies Heels",
-    category: "Women",
+    category: "shoes",
+    description: "Stylish high heels for parties and events.",
     image: p30_img,
     new_price: 3000,
     old_price: 3500,
@@ -280,7 +306,8 @@ const all_product = [
   {
     id: 31,
     name: "Printed Saree",
-    category: "Women",
+    category: "women",
+    description: "Traditional printed saree with elegant design.",
     image: p31_img,
     new_price: 4200,
     old_price: 5000,
@@ -288,42 +315,11 @@ const all_product = [
   {
     id: 32,
     name: "Casual Shorts",
-    category: "Men",
+    category: "men",
+    description: "Lightweight casual shorts for summer comfort.",
     image: p32_img,
     new_price: 1800,
     old_price: 2200,
-  },
-  {
-    id: 33,
-    name: "Girls Party Frock",
-    category: "Kids",
-    image: p33_img,
-    new_price: 2700,
-    old_price: 3200,
-  },
-  {
-    id: 34,
-    name: "Backpack",
-    category: "Women",
-    image: p34_img,
-    new_price: 2200,
-    old_price: 2700,
-  },
-  {
-    id: 35,
-    name: "Sweatpants",
-    category: "Men",
-    image: p35_img,
-    new_price: 2600,
-    old_price: 3100,
-  },
-  {
-    id: 36,
-    name: "Boys Orange Colourblocked Hooded Sweatshirt",
-    category: "Kids",
-    image: p36_img,
-    new_price: 2800,
-    old_price: 3300,
   },
 ];
 

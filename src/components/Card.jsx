@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Heart, ShoppingCart } from "lucide-react";
 import { ShopContext } from "../context/ShopContext"; // ✅ correct import
 
 function Card(props) {
-  const { addToCart } = useContext(ShopContext); // ✅ works now
+  const { addToCart, addToWishlist } = useContext(ShopContext); // ✅ works now
+  const navigate = useNavigate();
 
   return (
     <motion.div
@@ -25,8 +26,11 @@ function Card(props) {
           />
         </Link>
 
-        {/* Heart */}
-        <button className="absolute top-3 right-3 bg-white/90 p-2 rounded-full shadow hover:bg-red-400 hover:scale-110 transition-all duration-300">
+        {/* Heart  Add to wishlist*/}
+        <button
+          onClick={() => addToWishlist(props.id)}
+          className="absolute top-3 right-3 bg-white/90 p-2 rounded-full shadow hover:bg-red-400 hover:scale-110 transition-all duration-300"
+        >
           <Heart className="w-5 h-5 text-gray-600 hover:text-white" />
         </button>
 
@@ -57,7 +61,12 @@ function Card(props) {
         </div>
       </div>
 
-      <button className="bg-red-400 text-white py-2 px-4 my-6 mx-auto block rounded hover:bg-red-500 hover:scale-110 transition-all duration-300">
+      <button
+        onClick={() => {
+          navigate(`/product/${props.id}`);
+        }}
+        className="bg-red-400 text-white py-2 px-4 my-6 mx-auto block rounded hover:bg-red-500 hover:scale-110 transition-all duration-300"
+      >
         Buy Now
       </button>
     </motion.div>

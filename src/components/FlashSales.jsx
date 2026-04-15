@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./Card";
-import new_collection from "../data/Newcoll-data";
+import all_product from "../data/Newcoll-data";
 import { motion } from "framer-motion";
 
 function FlashSales() {
@@ -14,7 +14,7 @@ function FlashSales() {
         <h1 className="text-2xl font-bold mt-2">Flash Sales</h1>
 
         <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 place-items-center">
-          {new_collection.map((product) => (
+          {all_product.map((product) => (
             <Card
               key={product.id}
               id={product.id}
