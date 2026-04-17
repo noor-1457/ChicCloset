@@ -13,7 +13,7 @@ function BestSellings() {
         </div>
         <h1 className="text-2xl font-bold mt-2">Best Selling Products</h1>
 
-        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 place-items-center">
+        <div className="grid grid-cols-2 overflow-hidden sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
           {BestSelling.map((product) => (
             <Card {...product} />
           ))}

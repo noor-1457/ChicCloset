@@ -14,7 +14,7 @@ function Card(props) {
       whileInView={{ opacity: 1, y: 0 }}
       whileHover={{ y: -8 }}
       viewport={{ once: true }}
-      className="w-[260px] bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
+      className=" bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300  group cursor-pointer"
     >
       {/* Image */}
       <div className="relative bg-gray-100 p-4 flex items-center justify-center">
@@ -22,7 +22,7 @@ function Card(props) {
           <img
             src={props.image}
             alt="Product"
-            className="h-40 object-contain transition-transform duration-300 group-hover:scale-110"
+            className=" h-32 sm:h-40 md:h-48 object-contain"
           />
         </Link>
 
@@ -44,7 +44,7 @@ function Card(props) {
       </div>
 
       {/* Content */}
-      <div className="p-4 text-center">
+      <div className="p-2 text-center">
         <h2 className="font-semibold text-gray-800 text-sm line-clamp-2">
           {props.name}
         </h2>
@@ -65,7 +65,7 @@ function Card(props) {
         onClick={() => {
           navigate(`/product/${props.id}`);
         }}
-        className="bg-red-400 text-white py-2 px-4 my-6 mx-auto block rounded hover:bg-red-500 hover:scale-110 transition-all duration-300"
+        className="bg-red-400 text-white py-2 px-4 my-3 mx-auto block rounded hover:bg-red-500 hover:scale-110 transition-all duration-300"
       >
         Buy Now
       </button>

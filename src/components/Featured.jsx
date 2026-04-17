@@ -39,7 +39,7 @@ function Featured() {
             <img
               src={hat}
               alt=""
-              className="w-full h-full object-cover rounded-lg fade"
+              className=" h-full object-cover rounded-lg fade"
             />
 
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent">
@@ -64,7 +64,7 @@ function Featured() {
               <img
                 src={perfume}
                 alt=""
-                className="w-full h-full object-cover rounded-lg"
+                className=" h-full object-cover rounded-lg"
               />
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent">
@@ -89,7 +89,7 @@ function Featured() {
                 <img
                   src={ps5}
                   alt=""
-                  className="w-full h-full object-cover rounded-lg"
+                  className=" h-full object-cover rounded-lg"
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent">
@@ -112,7 +112,7 @@ function Featured() {
                 <img
                   src={speaker}
                   alt=""
-                  className="w-full h-full object-cover rounded-lg"
+                  className=" h-full object-cover rounded-lg"
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent">

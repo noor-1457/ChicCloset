@@ -19,7 +19,7 @@ function Products() {
 
         {/* Products Grid */}
         <div
-          className={`mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 place-items-center transition-all duration-500 ${
+          className={`grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6${
             showAll ? "" : "max-h-96 overflow-hidden"
           }`}
         >

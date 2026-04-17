@@ -78,7 +78,7 @@ function Navbar() {
               <Link to="/wishlist">
                 <Heart className="text-gray-300 hover:text-white transition" />
               </Link>
-              {/* Cart Badge */}
+              {/* Wishlist Badge */}
               <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1.5 rounded-full">
                 {getTotalWishlistItems()}
               </span>
@@ -143,8 +143,23 @@ function Navbar() {
 
             {/* Icons */}
             <div className="flex justify-center gap-6 mt-4">
-              <Heart className="text-gray-300 hover:text-red-400 cursor-pointer transition" />
-              <ShoppingCart className="text-gray-300 hover:text-red-400 cursor-pointer transition" />
+              <Link onClick={() => setIsOpen(false)} to="/wishlist">
+                <Heart className="text-gray-300 hover:text-white transition" />
+              </Link>
+              {/* Wishlist Badge */}
+              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1.5 rounded-full">
+                {getTotalWishlistItems()}
+              </span>
+
+              <div className="relative cursor-pointer">
+                <Link onClick={() => setIsOpen(false)} to="/cart">
+                  <ShoppingCart className="text-gray-300 hover:text-white transition" />
+                </Link>
+                {/* Cart Badge */}
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1.5 rounded-full">
+                  {getTotalcartItems()}
+                </span>
+              </div>
             </div>
           </div>
 
