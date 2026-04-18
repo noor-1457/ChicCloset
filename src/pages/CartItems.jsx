@@ -7,9 +7,9 @@ export const CartItems = () => {
     useContext(ShopContext);
 
   return (
-    <div className="max-w-6xl mx-auto p-6">
+    <div className="max-w-6xl mx-auto p-2">
       {/* Header */}
-      <div className="grid grid-cols-6 font-semibold text-gray-600 border-b pb-2">
+      <div className="grid grid-cols-6 font-semibold text-gray-600 sm:gap-2 border-b pb-2">
         <p>Product</p>
         <p>Title</p>
         <p>Price</p>
@@ -90,7 +90,7 @@ export const CartItems = () => {
               placeholder="Promo code"
               className="flex-1 border px-3 py-2 rounded"
             />
-            <button className="bg-black text-white px-4 rounded hover:bg-gray-800">
+            <button className="bg-black text-white px-2 rounded hover:bg-gray-800">
               Apply
             </button>
           </div>

@@ -27,11 +27,11 @@ function FlashSales() {
           ))}
         </div>
       </div>
-      <motion.div className="flex  justify-center items-center place-items-center">
+      {/* <motion.div className="flex  justify-center items-center place-items-center">
         <button className="bg-red-400 text-white py-2 px-4 my-8 mx-auto rounded hover:bg-red-500 hover:scale-110 transition-all duration-300">
           View All Products
         </button>
-      </motion.div>
+      </motion.div> */}
       <div className="bg-zinc-400  h-0.5 w-100%"></div>
     </>
   );

@@ -5,6 +5,7 @@ import BestSellings from "../data/BestSellings";
 import extra_products from "../data/ExtraProducts";
 
 export const ShopContext = createContext(null);
+
 const allProducts = [
   ...all_product,
   ...new_collection,
@@ -98,11 +99,14 @@ const ShopContextProvider = (props) => {
     }
     return total;
   };
+  const [search, setSearch] = useState("");
 
   // ---------------- CONTEXT ----------------
 
   const ContextValue = {
     allProducts,
+    search,
+    setSearch,
 
     // cart
     cartItems,

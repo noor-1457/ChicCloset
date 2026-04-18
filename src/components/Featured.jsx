@@ -43,7 +43,7 @@ function Featured() {
             />
 
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent">
-              <span className="text-xl md:text-2xl text-white font-semibold absolute bottom-16 left-5">
+              <span className="text-xl md:text-2xl text-white font-semibold absolute bottom-20 left-5">
                 Women’s Collections
               </span>
 
@@ -93,7 +93,7 @@ function Featured() {
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent">
-                  <span className="text-sm md:text-xl text-white font-semibold absolute bottom-16 left-2">
+                  <span className="text-sm md:text-xl text-white font-semibold absolute bottom-19 left-2">
                     Play Station 5
                   </span>
 
@@ -116,7 +116,7 @@ function Featured() {
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent">
-                  <span className="text-sm md:text-xl text-white font-semibold absolute bottom-16 left-2">
+                  <span className="text-sm md:text-xl text-white font-semibold absolute bottom-19 left-2">
                     Speakers
                   </span>
 

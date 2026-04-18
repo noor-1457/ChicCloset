@@ -31,7 +31,7 @@ function Card(props) {
           onClick={() => addToWishlist(props.id)}
           className="absolute top-3 right-3 bg-white/90 p-2 rounded-full shadow hover:bg-red-400 hover:scale-110 transition-all duration-300"
         >
-          <Heart className="w-5 h-5 text-gray-600 hover:text-white" />
+          <Heart className="w-5 h-5 text-gray-600 hover:not-focus:indigo-700 " />
         </button>
 
         {/* Add to Cart */}

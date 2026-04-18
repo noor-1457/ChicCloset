@@ -5,7 +5,8 @@ import { ShopContext } from "../context/ShopContext";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const { getTotalcartItems, getTotalWishlistItems } = useContext(ShopContext);
+  const { search, setSearch, getTotalcartItems, getTotalWishlistItems } =
+    useContext(ShopContext);
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -59,6 +60,10 @@ function Navbar() {
               />
 
               <input
+                value={search}
+                onChange={(e) => {
+                  setSearch(e.target.value);
+                }}
                 type="text"
                 placeholder="Search products..."
                 className="bg-zinc-800 text-gray-300 placeholder:text-gray-500 
@@ -133,6 +138,10 @@ function Navbar() {
               />
 
               <input
+                value={search}
+                onChange={(e) => {
+                  setSearch(e.target.value);
+                }}
                 type="text"
                 placeholder="Search products..."
                 className="w-full bg-zinc-800 text-gray-300 placeholder:text-gray-500 
@@ -142,15 +151,15 @@ function Navbar() {
             </div>
 
             {/* Icons */}
-            <div className="flex justify-center gap-6 mt-4">
+            <div className="flex relative justify-center gap-6 mt-4">
               <Link onClick={() => setIsOpen(false)} to="/wishlist">
                 <Heart className="text-gray-300 hover:text-white transition" />
               </Link>
+
               {/* Wishlist Badge */}
-              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1.5 rounded-full">
+              <span className="absolute -top-2 bg-red-500 text-white text-xs px-1.5 rounded-full">
                 {getTotalWishlistItems()}
               </span>
-
               <div className="relative cursor-pointer">
                 <Link onClick={() => setIsOpen(false)} to="/cart">
                   <ShoppingCart className="text-gray-300 hover:text-white transition" />
