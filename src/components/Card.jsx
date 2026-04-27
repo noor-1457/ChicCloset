@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Heart, ShoppingCart } from "lucide-react";
 import { ShopContext } from "../context/ShopContext"; // ✅ correct import
+import { toast } from "react-toastify";
 
 function Card(props) {
   const { addToCart, addToWishlist } = useContext(ShopContext); // ✅ works now
@@ -28,18 +29,24 @@ function Card(props) {
 
         {/* Heart  Add to wishlist*/}
         <button
-          onClick={() => addToWishlist(props.id)}
+          onClick={() => {
+            addToWishlist(props.id);
+            toast.success("Added to wishlist!");
+          }}
           className="absolute top-3 right-3 bg-white/90 p-2 rounded-full shadow hover:bg-red-400 hover:scale-110 transition-all duration-300"
         >
-          <Heart className="w-5 h-5 text-gray-600 hover:not-focus:indigo-700 " />
+          <Heart className="w-5 h-5 text-gray-600 hover:text-white cursor-pointer" />
         </button>
 
         {/* Add to Cart */}
         <button
-          onClick={() => addToCart(props.id)} // ✅ fixed
+          onClick={() => {
+            addToCart(props.id);
+            toast.success("Added to cart!");
+          }} // ✅ fixed
           className="absolute top-14 right-3 bg-white/90 p-2 rounded-full shadow hover:bg-red-400 hover:scale-110 transition-all duration-300"
         >
-          <ShoppingCart className="w-5 h-5 text-gray-600 hover:text-white" />
+          <ShoppingCart className="w-5 h-5 text-gray-600 hover:text-white cursor-pointer" />
         </button>
       </div>
 
@@ -65,7 +72,7 @@ function Card(props) {
         onClick={() => {
           navigate(`/product/${props.id}`);
         }}
-        className="bg-red-400 text-white py-2 px-4 my-3 mx-auto block rounded hover:bg-red-500 hover:scale-110 transition-all duration-300"
+        className="bg-red-400 text-white py-2 px-4 my-3 mx-auto block rounded hover:bg-red-500 cursor-pointer hover:scale-110 transition-all duration-300"
       >
         Buy Now
       </button>

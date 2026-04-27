@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 export default function PublicLayout() {
   return (
     <>
-      <div className=" bg-whitetransition-colors sm:overflow-hidden duration-500">
+      <div>
         <Navbar />
 
         <main>

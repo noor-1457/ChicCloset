@@ -1,6 +1,6 @@
 import "./App.css";
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import PublicLayout from "./layout/PublicLayout.jsx";
 import Contact from "./pages/Contact.jsx";
 import Home from "./pages/Home.jsx";
@@ -10,10 +10,12 @@ import { CartItems } from "./pages/CartItems.jsx";
 import ProductCard from "./components/ProductCard.jsx";
 import Buy from "./pages/Buy.jsx";
 import Category from "./pages/Category.jsx";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
-    <div>
+    <>
+      <ScrollToTop />
       <Routes>
         <Route element={<PublicLayout />}>
           <Route path="/" element={<Home />} />
@@ -26,7 +28,7 @@ function App() {
           <Route path="/category/:name" element={<Category />} />
         </Route>
       </Routes>
-    </div>
+    </>
   );
 }
 

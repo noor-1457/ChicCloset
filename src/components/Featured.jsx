@@ -134,7 +134,7 @@ function Featured() {
         </div>
       </div>
       {/* last section */}
-      <div className="container mt-20 flex items-center justify-center gap-8">
+      <div className="container mt-20 flex items-center justify-center place-items-center md:ml-10 md:ml-0 sm:ml-0 gap-8">
         {icons.map((items, index) => (
           <div
             key={index}

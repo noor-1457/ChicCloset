@@ -50,7 +50,7 @@ const Contact = () => {
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
         >
-          <h1 className="text-4xl font-bold text-gray-900">Let's Talk 👋</h1>
+          <h1 className="text-4xl font-bold text-gray-900">Let's Talk</h1>
 
           <div className="space-y-4 mt-8">
             {contactInfo.map((item, idx) => (

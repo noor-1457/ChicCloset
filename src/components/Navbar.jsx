@@ -25,7 +25,8 @@ function Navbar() {
         Summer Sale - Up to 50% Off!
       </div>
 
-      <nav className="bg-black w-full z-50 shadow-md">
+      <nav className="sticky top-0 z-50 bg-black shadow-md">
+        {" "}
         {/* Navbar Top */}
         <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
           {/* Logo */}
@@ -108,9 +109,7 @@ function Navbar() {
             <Menu size={28} />
           </button>
         </div>
-
         {/* ================= MOBILE DRAWER ================= */}
-
         <div
           className={`fixed h-screen top-0 left-0 w-full lg:hidden z-50
           transition-all duration-500 p-4 bg-black/95 backdrop-blur-md overflow-y-auto
